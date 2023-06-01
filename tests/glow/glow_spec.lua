@@ -12,6 +12,14 @@ describe("setup", function()
       pager = false,
       width = 100,
       height = 100,
+      default_type = "preview",
+      split_dir = "vsplit",
+      winbar = true,
+      winbar_text = "%#Error#%=GLOW%=",
+      mappings = {
+        close = { "<Esc>", "q" }, -- to close Glow
+        toggle = { "p" }
+      }
     }
     glow.setup()
     assert.are.same(glow.config, expected)
@@ -27,6 +35,14 @@ describe("setup", function()
       mouse = false,
       width = 200,
       height = 100,
+      default_type = "keep",
+      split_dir = "split",
+      winbar = false,
+      winbar_text = "test",
+      mappings = {
+        toggle = { "t", "e" },
+        close = { "s", "t" }
+      }
     }
     glow.setup(expected)
     assert.are.same(glow.config, expected)
